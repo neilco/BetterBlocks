@@ -66,7 +66,7 @@ NSString * NSStringFromNSURLResponse(NSURLResponse *response)
     NSString *description = nil;
     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
         NSHTTPURLResponse *instance = (NSHTTPURLResponse *)response;
-        description = [NSString stringWithFormat:@"<%@: %p> {\n\tstatus: %ld,\n\tHeaders: %@}", [instance class], &instance, [instance statusCode], [instance allHeaderFields]];
+        description = [NSString stringWithFormat:@"<%@: %p> {\n\tstatus: %i,\n\tHeaders: %@}", [instance class], &instance, (int)[instance statusCode], [instance allHeaderFields]];
     } else {
         description = [response description];
     }
